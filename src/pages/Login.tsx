@@ -22,7 +22,7 @@ const Login = () => {
           <img src={logo} alt="lendsqr" width={"40%"} />
           <img src={illustration} alt="lendsqr" width={"90%"} />
         </div>
-        <h1>Welcome!</h1>
+        <h1 className="">Welcome!</h1>
         <p className="form__paragraph">Enter details to login.</p>
         <form action="">
           <Input inputType="email" placeholder="Email" />

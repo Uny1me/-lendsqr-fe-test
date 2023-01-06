@@ -41,7 +41,10 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.13",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.57.1"
+    "postcss": "^8.4.20",
+    "sass": "^1.57.1",
+    "tailwind": "^4.0.0"
   }
 }

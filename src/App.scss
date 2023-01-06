@@ -99,6 +99,21 @@ $outline-responsive: 1px solid tomato;
   }
 }
 
+.login-container {
+  h1 {
+    font-size: 30px;
+    line-height: 34px;
+  }
+  &__form {
+    p.form__paragraph {
+      margin-bottom: 20px !important;
+    }
+  }
+}
+.custom__input__addon {
+  padding: 0 8.2px;
+}
+
 // Media Queries
 @media (min-width: 768px) {
   // Custom Components
@@ -122,7 +137,6 @@ $outline-responsive: 1px solid tomato;
       display: flex;
       flex-direction: column;
       padding: 7.36vw 6.746vw;
-      // width: 50%;
       background-color: rgba(0, 0, 0, 0.007);
 
       img:first-child {
