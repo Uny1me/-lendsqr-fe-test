@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../public/fonts/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url("../public/fonts/AvenirNextLTPro-Bold.otf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Avenir Next", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-family: "Avenir Next Bold";
+}
