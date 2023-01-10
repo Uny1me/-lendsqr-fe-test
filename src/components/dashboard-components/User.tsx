@@ -22,7 +22,7 @@ const User = ({ setNavigateDashBoard }: Props) => {
   const { profile, education, socials, guarantor } = oneUser;
 
   return (
-    <div className="lg:pl-[343px] w-[96vw] pt-[15px] user px-5">
+    <div className="lg:pl-[343px] w-[96vw] pt-[15px] user px-5 lg:pt-[60px]">
       <div
         className="flex items-center justify-start cursor-pointer"
         onClick={() => {
