@@ -4,13 +4,23 @@ import leftArrowIcon from "assets/icons/chevron-left.svg";
 import starIcon from "assets/icons/star.svg";
 import starStrokeIcon from "assets/icons/star-stroke.svg";
 import { UserTab } from "lib";
+import { getUserFromLocalStorage } from "utils";
+import { useEffect, useState } from "react";
 type Props = {
   setNavigateDashBoard: (navigateDashboard: string) => void;
-  oneUser: any;
 };
 
-const User = ({ setNavigateDashBoard, oneUser }: Props) => {
+const User = ({ setNavigateDashBoard }: Props) => {
+  const [oneUser, setOneUser] = useState<any>([]);
+
+  useEffect(() => {
+    // I feel a better alternative would be to initialise a state at the dashboard component then pass data as props this perevents any possible down time in loading and need for conditional rendering since the update of the state and fetching from localstorage would be effectively eliminated
+    const userData = getUserFromLocalStorage();
+
+    setOneUser(userData);
+  }, []);
   const { profile, education, socials, guarantor } = oneUser;
+
   return (
     <div className="lg:pl-[343px] w-[96vw] pt-[15px] user px-5">
       <div
@@ -26,7 +36,7 @@ const User = ({ setNavigateDashBoard, oneUser }: Props) => {
         <h2 className="text-primary lg:text-2xl text-lg font-medium grow">
           User Details
         </h2>
-        <div className="user__button-group flex xs:items-center lg:justify-between flex-col xs:flex-row">
+        <div className="user__button-group flex xs:items-center lg:justify-between flex-col sm:flex-row">
           <button className="blacklist">BLACKLIST USER</button>
           <button className="activate">ACTIVATE USER</button>
         </div>
@@ -36,13 +46,13 @@ const User = ({ setNavigateDashBoard, oneUser }: Props) => {
           <div className="user__basic-info flex items-center">
             {/* User Avatar Image */}
             <Icon
-              icon={profile.avatar}
+              icon={profile?.avatar}
               classes={"rounded-full w-[30%] lg:w-[60%]"}
             />
             <div className="container_avatar">
-              <h5 className="lg:text-[22px] text-md text-primary">{`${profile.firstName} ${profile.lastName}`}</h5>
+              <h5 className="lg:text-[22px] text-md text-primary">{`${profile?.firstName} ${profile?.lastName}`}</h5>
               <p className="lg:text-sm text-secondary text-xs">
-                {oneUser.accountNumber}
+                {oneUser?.accountNumber}
               </p>
             </div>
           </div>
@@ -81,26 +91,28 @@ const User = ({ setNavigateDashBoard, oneUser }: Props) => {
           <div className="pt-[30px] flex items flex-wrap ">
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">FULL NAME</h6>
-              <h5 className="text-base text-secondary pt-2">{`${profile.firstName} ${profile.lastName}`}</h5>
+              <h5 className="text-base text-secondary pt-2">{`${profile?.firstName} ${profile?.lastName}`}</h5>
             </div>
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">PHONE NUMBER</h6>
               <h5 className="text-base text-secondary pt-2">
-                {profile.phoneNumber}
+                {profile?.phoneNumber}
               </h5>
             </div>
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">EMAIL ADDRESS</h6>
-              <h5 className="text-base text-secondary pt-2">{oneUser.email}</h5>
+              <h5 className="text-base text-secondary pt-2">
+                {oneUser?.email}
+              </h5>
             </div>
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">BVN</h6>
-              <h5 className="text-base text-secondary pt-2">{profile.bvn}</h5>
+              <h5 className="text-base text-secondary pt-2">{profile?.bvn}</h5>
             </div>
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">GENDER</h6>
               <h5 className="text-base text-secondary pt-2">
-                {profile.gender}
+                {profile?.gender}
               </h5>
             </div>
           </div>
@@ -128,31 +140,31 @@ const User = ({ setNavigateDashBoard, oneUser }: Props) => {
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">LEVEL OF EDUCATION</h6>
               <h5 className="text-base text-secondary pt-2">
-                {education.level}
+                {education?.level}
               </h5>
             </div>
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">EMPLOYMENT STATUS</h6>
               <h5 className="text-base text-secondary pt-2">
-                {education.employmentStatus}
+                {education?.employmentStatus}
               </h5>
             </div>
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">SECTOR OF EMPLOYMENT</h6>
               <h5 className="text-base text-secondary pt-2">
-                {education.sector}
+                {education?.sector}
               </h5>
             </div>
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">DURATION OF EMPLOYMENT</h6>
               <h5 className="text-base text-secondary pt-2">
-                {education.duration}
+                {education?.duration}
               </h5>
             </div>
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">OFFICE EMAIL</h6>
               <h5 className="text-base text-secondary pt-2">
-                {education.officeEmail}
+                {education?.officeEmail}
               </h5>
             </div>
           </div>
@@ -160,7 +172,7 @@ const User = ({ setNavigateDashBoard, oneUser }: Props) => {
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">MONTHLY INCOME</h6>
               <div className="flex">
-                {education.monthlyIncome.map((income: string) => {
+                {education?.monthlyIncome.map((income: string) => {
                   return (
                     <h5 className="text-base text-secondary pt-2 pr-5">
                       {income}
@@ -172,7 +184,7 @@ const User = ({ setNavigateDashBoard, oneUser }: Props) => {
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">LOAN PAYMENT</h6>
               <h5 className="text-base text-secondary pt-2">
-                {education.loanRepayment}
+                {education?.loanRepayment}
               </h5>
             </div>
           </div>
@@ -184,19 +196,19 @@ const User = ({ setNavigateDashBoard, oneUser }: Props) => {
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">TWITTER</h6>
               <h5 className="text-base text-secondary pt-2">
-                {socials.twitter}
+                {socials?.twitter}
               </h5>
             </div>
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">FACEBOOK</h6>
               <h5 className="text-base text-secondary pt-2">
-                {socials.facebook}
+                {socials?.facebook}
               </h5>
             </div>
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">INSTAGRAM</h6>
               <h5 className="text-base text-secondary pt-2">
-                {socials.instagram}
+                {socials?.instagram}
               </h5>
             </div>
           </div>
@@ -207,12 +219,12 @@ const User = ({ setNavigateDashBoard, oneUser }: Props) => {
           <div className="pt-[30px] flex items flex-wrap ">
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">FULL NAME</h6>
-              <h5 className="text-base text-secondary pt-2">{`${guarantor.firstName} ${guarantor.lastName}`}</h5>
+              <h5 className="text-base text-secondary pt-2">{`${guarantor?.firstName} ${guarantor?.lastName}`}</h5>
             </div>
             <div className="pr-[60px] min-w-[180px] pb-[30px]">
               <h6 className="text-secondary text-xs">PHONE NUMBER</h6>
               <h5 className="text-base text-secondary pt-2">
-                {guarantor.phoneNumber}
+                {guarantor?.phoneNumber}
               </h5>
             </div>
             <div className="pr-[60px] min-w-[180px] pb-[30px]">

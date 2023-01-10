@@ -12,6 +12,7 @@ import { Months } from "lib";
 
 import { ActiveBadge, InactiveBadge } from "components/Badges";
 import Pagination from "./Pagination";
+import { saveUserToLocalStorage } from "utils";
 
 type filterUserCardProps = {
   filterUsersCard: boolean;
@@ -19,11 +20,10 @@ type filterUserCardProps = {
 
 type UsersProps = {
   setNavigateDashBoard: (navigateDashboard: string) => void;
-  setOneUser: any;
   userData: any;
 };
 
-const Users = ({ userData, setNavigateDashBoard, setOneUser }: UsersProps) => {
+const Users = ({ userData, setNavigateDashBoard }: UsersProps) => {
   const [openDropDown, setOpenDropDown] = useState<string>("");
   const [sliceArray, setSliceArray] = useState({
     indexed: 0,
@@ -202,7 +202,8 @@ const Users = ({ userData, setNavigateDashBoard, setOneUser }: UsersProps) => {
                                       const thisUser = userData.find(
                                         ({ id }: any) => userId === id
                                       );
-                                      setOneUser(thisUser);
+
+                                      saveUserToLocalStorage(thisUser);
                                     }}
                                   >
                                     <Icon icon={eyeIcon} classes={"mr-2.5"} />

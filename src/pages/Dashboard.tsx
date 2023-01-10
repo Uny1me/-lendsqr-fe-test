@@ -12,7 +12,6 @@ const Dashboard = () => {
   const [openDashBoard, setOpenDashBoard] = useState(false);
   const [userData, setUserDataData] = useState([]);
   const [navigateDashBoard, setNavigateDashBoard] = useState<string>("users");
-  const [oneUser, setOneUser] = useState([]);
 
   useEffect(() => {
     getAllUserData(setUserDataData);
@@ -46,12 +45,12 @@ const Dashboard = () => {
             <Users
               userData={userData}
               setNavigateDashBoard={setNavigateDashBoard}
-              setOneUser={setOneUser}
+
             />
           ) : (
             <User
               setNavigateDashBoard={setNavigateDashBoard}
-              oneUser={oneUser}
+
             />
           )}
         </div>

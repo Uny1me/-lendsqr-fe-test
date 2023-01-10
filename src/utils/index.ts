@@ -15,6 +15,17 @@ const toggleMenu = (dispatch: (value: boolean) => void, value: boolean) => {
   dispatch(!value);
 };
 
-const localStorageAction = (action: any) => {};
+const saveUserToLocalStorage = (thisUser: any) => {
+  localStorage.setItem("oneUser", JSON.stringify(thisUser));
+};
 
-export { getAllUserData, toggleMenu };
+const getUserFromLocalStorage = () => {
+  const oneUser: any = localStorage.getItem("oneUser");
+  return JSON.parse(oneUser);
+};
+export {
+  getAllUserData,
+  toggleMenu,
+  saveUserToLocalStorage,
+  getUserFromLocalStorage,
+};
