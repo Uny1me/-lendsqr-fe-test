@@ -1,6 +1,6 @@
 import Input from "components/Input";
-import logo from "../images/logo.svg";
-import illustration from "images/sign-in-illustration.svg";
+import logo from "assets/images/logo.svg";
+import illustration from "assets/images/sign-in-illustration.svg";
 import { useState } from "react";
 
 const Login = () => {
@@ -25,15 +25,23 @@ const Login = () => {
         <h1 className="">Welcome!</h1>
         <p className="form__paragraph">Enter details to login.</p>
         <form action="">
-          <Input inputType="email" placeholder="Email" />
+          <Input inputType="email" placeholder="Email" customClass="py-10" />
           <Input
             inputType={showPassword ? "text" : "password"}
             placeholder="Password"
             addon="SHOW"
             addOnFunction={togglePassword}
+            customClass="py-10 "
           />
           <p className="cta-text">FORGOT PASSWORD?</p>
-          <button className="cta-button">LOG IN</button>
+          <div className="w-full">
+            <a
+              href="/dashboard"
+              className="cta-button grow inline-block w-full text-center py-2.5"
+            >
+              LOG IN
+            </a>
+          </div>
         </form>
       </div>
     </div>

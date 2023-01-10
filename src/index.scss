@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;600&family=Work+Sans:wght@500&display=swap");
+
 @font-face {
   font-family: "Avenir Next";
   src: url("../public/fonts/AvenirNextLTPro-Regular.otf");
@@ -15,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Avenir Next", sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
