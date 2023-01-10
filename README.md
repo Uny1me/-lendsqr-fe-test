@@ -1,46 +1,116 @@
-# Getting Started with Create React App
+# LENDSQR-FE-TEST DASHBOARD TEMPLATE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Lendsqr** is a Lending-as-a-Service solution powers lenders to launch in the shortest possible time, and scale their digital lending business across multiple channels, at the lowest cost.
 
-## Available Scripts
+# Preview
 
-In the project directory, you can run:
+### Screenshot
 
-### `npm start`
+![Adminator admin dashboard template preview](/public/dashboard-readme-preview.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Demo Site: [Here](https://colorlib.com/polygon/adminator/index.html)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## TOC
 
-### `npm test`
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installing & Local Development](#installing--local-development)
+- [Files/Folder Structure](#filesfolders-structure)
+- [Deployment](#deployment)
+- [Built With](#built-with)
+- [Changelog](#changelog)
+- [Authors](#authors)
+- [License](#license)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+In order to run **Lendsqr** on your local machine all what you need to do is to have the prerequisites stated below installed on your machine and follow the installation steps down below.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js
+- Yarn or NPM
+- Git CLI
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Installing & Local Development
 
-### `npm run eject`
+Start by typing the following commands in your terminal in order to get **Lendsqr** full package on your machine and starting a local development server with live reload feature.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+> git clone https://github.com/Uny1me/lendsqr-fe-test.git lendsqr
+> cd lendsqr
+> npm install
+> npm run start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Files/Folders Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Here is a brief explanation of the template folder structure and some of its main files usage:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+└── src                         # Contains all template source files.
+│   └── assets                  # Contains images and icon fonts.
+│       │
+│       └── conmponents         # Contains important Re-useable full configured components used in Pages all written in TypeScript
+│       │     └── dashboard-c.. # Contains components specific to the dashboard page
+│       │
+│       └── lib                 # Contains important Re-useable data
+│       └── pages               # Files for site pages (.tsx)
+│       └── pages               # Basic utils used for proper rendering.
+│       └── *.scss              # Styling Files for app
+│       └── index.tsx           # Entry point for Application
+│       └── App.tsx             # HOF for entire app
+│       └── custom.d.ts         # Configuration for importing image/svg image/png files
+│
+│
+└── public                      # Ignored files in Git.
+│    │
+│    └──fonts                   # All font files used, save for Inter which was gotten leveraging Google Font CDN
+│    └──*.png                   # Image File
+│    └──*.ico                   # Favicon
+│    └──index.html              # Entry point -- html
+│    └──*.json                  # Manifest file
+└── .gitignore                  # Ignored files in Git.
+└── package.json                # Package metadata.
+└── README.md                   # Precise and Tailord Documentation of
+└── postcss.config.js           # POSTCSS main config file.
+└── tailwind.config.js          # Tailwind main config file.
+└── package.lock                # npm metadata.
+```
 
-## Learn More
+## Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In deployment process, you have two commands:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Build command
+   Used to generate the final result of compiling src files into build folder. This can be achieved by running the following command:
+
+```
+> npm run build
+```
+
+2. Test command
+   Used to create a local dev server in order to preview the final output of build process. This can be achieved by running the following command:
+
+```
+> npm run test
+```
+
+## Built With
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [SCSS](https://sass-lang.com/)
+## Changelog
+
+#### V 0.1.0
+
+Initial Release
+
+## Authors
+
+[Unyime](https://github.com/Uny1me)
+
+## More info
+This was done as a FrontEnd Engineering Test Provided by [Unyime](https://www.lendsqr.com/)
+Appreciate the opportunity
