@@ -1,8 +1,41 @@
+/*
+  Style Structure
+  
+    <!-- Constants -->
+
+    <!-- Custom Classes -->
+
+    <!-- Overrriding Styles Classes -->
+
+    <!-- Custom Component Styles -->
+      <!-- CCS - Input -->
+
+    <!-- Login -->
+
+    <!-- Dashboard -->
+      <!-- Sidebar -->
+      <!-- Filter Users Card -->
+      <!-- Header -->
+
+      <!-- Users -->
+      <!-- Users Card -->
+
+      <!-- User -->
+
+      <!-- DropDown Pagination -->
+
+
+   <!-- Media Queries-->
+
+*/
+
+// Constants
 $primary-color: #213f7d;
 $secondary-color: #545f7d;
 $cta-color: #39cdcc;
 $outline-responsive: 1px solid tomato;
 
+// Custom Classes
 .o-red {
   outline: $outline-responsive;
 }
@@ -19,7 +52,6 @@ $outline-responsive: 1px solid tomato;
   background-color: rgba($color: #39cd62, $alpha: 0.06);
   color: #39cd62;
 }
-// Custom Classes
 .text-primary {
   color: $primary-color;
 }
@@ -39,21 +71,23 @@ $outline-responsive: 1px solid tomato;
   background-color: transparent !important;
 }
 
-// Overriding Styles
-
-#react-burger-menu-btn,
-.bm-burger-bars {
-  display: none !important;
-}
 
 .cta-button {
   background-color: $cta-color;
-  // width: 100%;
   border-color: transparent;
   color: white;
   border-radius: 5px;
   font-family: "Avenir Next Bold";
   letter-spacing: 0.1em;
+}
+
+// Overriding Styles
+#react-burger-menu-btn,
+.bm-burger-bars {
+  display: none !important;
+}
+.user-menu-class .bm-menu-wrap {
+  width: 100% !important;
 }
 
 // Custom Component
@@ -63,7 +97,6 @@ $outline-responsive: 1px solid tomato;
 }
 .custom__input-container {
   border: 2px solid rgba(84, 95, 125, 0.15);
-  //   height: 50px;
   width: 100%;
   border-radius: 5px;
   box-sizing: border-box;
@@ -102,77 +135,11 @@ $outline-responsive: 1px solid tomato;
     background-color: transparent;
   }
 }
-
-// Filter Users Card
-.filter_users__card {
-  padding: 30px 20px 28px 20px;
-  background-color: white;
-  position: absolute;
-  border: 1px solid rgba(84, 95, 125, 0.14);
-  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-  border-radius: 4px;
-  min-width: 270px;
-  left: 15px;
-  top: 60px;
-  h4 {
-    font-weight: 500;
-    font-size: 14px;
-    margin-bottom: 6px;
-    color: $secondary-color;
-    text-transform: none;
-  }
-  &-button-group {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    button {
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 12px 31px 11px 30px;
-    }
-    button.button-outline {
-      border: 1px solid #545f7d;
-    }
-  }
+.custom__input__addon {
+  padding: 0 8.2px;
 }
 
-// SideBar
-.sidebar {
-  .border-color-table-data {
-    background: rgba(33, 63, 125, 0.1);
-  }
-
-  opacity: 1;
-  background-color: white;
-
-  li {
-    border-left: 3px solid transparent;
-    color: $secondary-color;
-    width: 100% !important;
-    font-size: 16px;
-    padding: 10px 0px 10px 30px;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    img {
-      padding-right: 10px;
-    }
-  }
-  li:hover {
-    background: rgba($color: #39cdcc, $alpha: 0.06);
-    border-left: 3px solid #39cdcc;
-    color: $primary-color;
-    cursor: pointer;
-  }
-  li.active-tab {
-    background: rgba($color: #39cdcc, $alpha: 0.06);
-    border-left: 3px solid #39cdcc;
-    color: $primary-color;
-  }
-}
-
-// Login Form
+// Login
 .login-container {
   height: 100vh;
   overflow: hidden;
@@ -216,11 +183,8 @@ $outline-responsive: 1px solid tomato;
     }
   }
 }
-.custom__input__addon {
-  padding: 0 8.2px;
-}
 
-// Dashboard Start
+// Dashboard
 .dashboard {
   font-family: "Work Sans", sans-serif;
   &__table {
@@ -243,10 +207,80 @@ $outline-responsive: 1px solid tomato;
     }
   }
 }
-// &__ Header
+// SideBar
+.sidebar {
+  .border-color-table-data {
+    background: rgba(33, 63, 125, 0.1);
+  }
+
+  opacity: 1;
+  background-color: white;
+
+  li {
+    border-left: 3px solid transparent;
+    color: $secondary-color;
+    width: 100% !important;
+    font-size: 16px;
+    padding: 10px 0px 10px 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    img {
+      padding-right: 10px;
+    }
+  }
+  li:hover {
+    background: rgba($color: #39cdcc, $alpha: 0.06);
+    border-left: 3px solid #39cdcc;
+    color: $primary-color;
+    cursor: pointer;
+  }
+  li.active-tab {
+    background: rgba($color: #39cdcc, $alpha: 0.06);
+    border-left: 3px solid #39cdcc;
+    color: $primary-color;
+  }
+}
+
+// Filter Users Card
+.filter_users__card {
+  padding: 30px 20px 28px 20px;
+  background-color: white;
+  position: absolute;
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  min-width: 270px;
+  left: 15px;
+  top: 60px;
+  h4 {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: $secondary-color;
+    text-transform: none;
+  }
+  &-button-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button {
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 31px 11px 30px;
+    }
+    button.button-outline {
+      border: 1px solid #545f7d;
+    }
+  }
+}
+// Header
 .header {
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
 }
+
+
 // Users
 // Users Card
 .users__card {
@@ -272,14 +306,8 @@ $outline-responsive: 1px solid tomato;
     line-height: 28px;
   }
 }
-@media (max-width: 768px) {
-  .users__card {
-    width: 100%;
-  }
-}
 
 // User
-
 .user {
   &__button-group {
     button {
@@ -358,6 +386,7 @@ $outline-responsive: 1px solid tomato;
   }
 }
 
+// <!-- DropDown Pagination -->
 .dropdown_pagination {
   &-button {
     padding: 7px 12px;
@@ -370,11 +399,18 @@ $outline-responsive: 1px solid tomato;
     color: $secondary-color !important;
   }
 }
-
 // Dashboard End
-.user-menu-class .bm-menu-wrap {
-  width: 100% !important;
+
+
+
+// Media Queries
+
+@media (max-width: 768px) {
+  .users__card {
+    width: 100%;
+  }
 }
+
 
 @media (max-width: 640px) {
   .user {
